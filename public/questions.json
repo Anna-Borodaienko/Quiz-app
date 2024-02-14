@@ -1,0 +1,7 @@
+{
+  "What is your preferred language?": ["English", "French", "German", "Spanish"],
+  "What gender do you identify with?": ["Female", "Male", "Other"],
+  "What is your age": ["18-29", "30-39", "40-49", "50+"],
+  "What do you hate the most in a book?": ["Lack of logic", "A slow speed", "Lack of humor", "Way too generic ending"],
+  "What are your favorite topics?": ["Werewolf", "Action", "Romance", "Young Adult", "Royal Obsession", "Bad Boy", "Billionaire"]
+}

@@ -5,3 +5,7 @@ export const getLocale = (): string => {
 export const setLocale = (locale: string): void => {
   localStorage.setItem('locale', locale);
 };
+
+export const setGender = (gender: string): void => {
+  localStorage.setItem('gender', gender);
+}
