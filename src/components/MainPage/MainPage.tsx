@@ -1,8 +1,10 @@
+import { setLocale } from "../../api/answers";
 
 const MainPage: React.FC = () => {
-  const onChooseLang = (e: React.MouseEvent<HTMLButtonElement>) => {
-    localStorage.setItem('locale', e.currentTarget.innerText)
+  const onChooseLang = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    setLocale(e.currentTarget.innerText);
   }
+
   return (
     <>
       <div>What is your preferred language?</div>
