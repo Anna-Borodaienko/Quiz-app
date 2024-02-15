@@ -1,43 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import MainPage from './components/MainPage/MainPage';
+import React, { useState } from 'react';
+import MainPage from './components/MainPage';
 import { Routes, Route } from 'react-router-dom';
-import GenderPage from './components/GenderPage/GenderPage';
-import AgePage from './components/AgePage/AgePage';
-import { questions } from './constants/questions';
-import Header from './components/Header/Header';
-import HatePage from './components/HatePage/HatePage';
-import TopicsPage from './components/TopicsPage/TopicsPage';
-import CircleProgressBar from './components/CircleProgressBar/CircleProgressBar';
-import EmailPage from './components/EmailPage/EmailPage';
-import FinishPage from './components/FinishPage/FinishPage';
-
-const AppWrapper = styled.div`
-  width: 100vw;
-  height: 100vh; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-
-const StyledApp = styled.div`
-  width: 375px;
-  height: 600px;
-  color: white;
-  background: #36173D;
-  border-radius: 2%;
-  border: 2px solid #24262b;
-  box-shadow: 2px 4px 6px 0px #24262b;
-`
+import GenderPage from './components/GenderPage';
+import AgePage from './components/AgePage';
+import { totalQuestionsNr } from './constants/questions';
+import HatePage from './components/HatePage';
+import TopicsPage from './components/TopicsPage';
+import CircleProgressBar from './components/CircleProgressBar';
+import EmailPage from './components/EmailPage';
+import FinishPage from './components/FinishPage';
+import { AppWrapper, StyledApp } from './App.styled';
 
 const App: React.FC = () => {
-  const [totalQuestions, setTotalQuestions] = useState(0);
   const [currentQuestionNr, setCurrentQuestionNr] = useState(1);
-
-  useEffect(() => {
-    const totalNr = Object.keys(questions).length;
-    setTotalQuestions(totalNr);
-  }, []);
 
   const changeQuestion = (number: number) => {
     setCurrentQuestionNr(number);
@@ -48,12 +23,12 @@ const App: React.FC = () => {
       <StyledApp>
         <main>
           <Routes>
-            <Route path='/' element={<MainPage totalNr={totalQuestions} currentNr={currentQuestionNr <= totalQuestions ? currentQuestionNr : 1} changeQuestion={changeQuestion}/>} />
-            <Route path='/quiz/1' element={<MainPage totalNr={totalQuestions} currentNr={currentQuestionNr <= totalQuestions ? currentQuestionNr : 1} changeQuestion={changeQuestion} />} />
-            <Route path='/quiz/2' element={<GenderPage totalNr={totalQuestions} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
-            <Route path='/quiz/3' element={<AgePage totalNr={totalQuestions} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
-            <Route path='/quiz/4' element={<HatePage totalNr={totalQuestions} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
-            <Route path='/quiz/5' element={<TopicsPage totalNr={totalQuestions} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
+            <Route path='/' element={<MainPage totalNr={totalQuestionsNr} currentNr={currentQuestionNr <= totalQuestionsNr ? currentQuestionNr : 1} changeQuestion={changeQuestion}/>} />
+            <Route path='/quiz/1' element={<MainPage totalNr={totalQuestionsNr} currentNr={currentQuestionNr <= totalQuestionsNr ? currentQuestionNr : 1} changeQuestion={changeQuestion} />} />
+            <Route path='/quiz/2' element={<GenderPage totalNr={totalQuestionsNr} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
+            <Route path='/quiz/3' element={<AgePage totalNr={totalQuestionsNr} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
+            <Route path='/quiz/4' element={<HatePage totalNr={totalQuestionsNr} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
+            <Route path='/quiz/5' element={<TopicsPage totalNr={totalQuestionsNr} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
             <Route path='/loader' element={<CircleProgressBar />} />
             <Route path='/email' element={<EmailPage />} />
             <Route path='/finish' element={<FinishPage />} />

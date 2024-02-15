@@ -11,6 +11,9 @@ const Global = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  body {
+    font-family: "Nunito Sans", sans-serif;
+  }
 `
 
 const root = ReactDOM.createRoot(
