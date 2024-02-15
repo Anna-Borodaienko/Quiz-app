@@ -10,6 +10,7 @@ import HatePage from './components/HatePage/HatePage';
 import TopicsPage from './components/TopicsPage/TopicsPage';
 import CircleProgressBar from './components/CircleProgressBar/CircleProgressBar';
 import EmailPage from './components/EmailPage/EmailPage';
+import FinishPage from './components/FinishPage/FinishPage';
 
 const AppWrapper = styled.div`
   width: 100vw;
@@ -58,6 +59,7 @@ const App: React.FC = () => {
             <Route path='/quiz/5' element={<TopicsPage currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
             <Route path='/loader' element={<CircleProgressBar />} />
             <Route path='/email' element={<EmailPage />} />
+            <Route path='/finish' element={<FinishPage />} />
           </Routes>
         </main>
       </StyledApp>

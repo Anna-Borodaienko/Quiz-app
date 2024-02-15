@@ -29,3 +29,11 @@ export const setTopic = (topics: string[]): void => {
 export const getTopic = (): string | null => {
   return localStorage.getItem('topics' || '');
 }
+
+export const setEmail = (email: string): void => {
+  localStorage.setItem('email', email);
+}
+
+export const clearAll = () => {
+  localStorage.clear();
+}
