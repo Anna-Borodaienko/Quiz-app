@@ -12,13 +12,14 @@ export const RowContainer = styled.div`
   justify-content: center;
   align-items: center;
 `
-
-export const Icon = styled.img`
-  height: 40px;
-  width: 40px;
-  margin: 5px;
+export const IconWrapper = styled.div`
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
 `
 
-
-
-
+export const Icon = styled.img`
+  height: 14px;
+  width: 14px;
+`

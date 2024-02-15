@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import back from '../../images/back.svg';
-import { HeaderWrapper, RowContainer, Icon } from './Header.styled';
+import { HeaderWrapper, RowContainer, Icon, IconWrapper } from './Header.styled';
 import ProgressBarLine from '../ProgressBarLine';
 import Counter from '../Counter';
 
@@ -22,12 +22,14 @@ const Header: React.FC<HeaderProps> = ({ totalNr, currentNr, changeQuestion }) =
       {currentNr <= 5 && (
         <>
           <RowContainer>
-            {currentNr > 1 && (
+            {currentNr > 1 ? (
               <Link to={`/quiz/${currentNr - 1}`}>
-                <Icon src={back} alt="Back" onClick={handleBack}/>
+                <IconWrapper>
+                  <Icon src={back} alt="Back" onClick={handleBack}/>
+                </IconWrapper>
               </Link>
-            )}
-          <Counter totalNr={totalNr} currentNr={currentNr} />
+            ) : <IconWrapper />}
+            <Counter totalNr={totalNr} currentNr={currentNr} />
           </RowContainer>
           <RowContainer>
             <ProgressBarLine currentNr={currentNr} />
