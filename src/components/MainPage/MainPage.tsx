@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { setLocale } from "../../api/answers";
-// import Header from "../Header/Header";
+import { submitLocale } from "../../api/answers";
 import { useTranslation } from "react-i18next";
 import Header from "../Header/Header";
 import { Languages } from "../../i18n/constants";
@@ -16,7 +15,7 @@ const MainPage: React.FC<MainPageProps> = ({ totalNr, currentNr, changeQuestion 
   const { i18n } = useTranslation();
 
   const onChooseLang = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    setLocale(e.currentTarget.innerText);
+    submitLocale(e.currentTarget.innerText);
     changeQuestion(currentNr + 1);
     i18n.changeLanguage((Languages as any)[e.currentTarget.innerText]);
   }
@@ -32,7 +31,6 @@ const MainPage: React.FC<MainPageProps> = ({ totalNr, currentNr, changeQuestion 
         <button onClick={onChooseLang}>German</button>
         <button onClick={onChooseLang}>Spanish</button>
       </Link>
-      
     </>
   )
 }

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { getHate, setHate } from "../../api/answers";
-import styled from "styled-components";
+import { getHate, submitHate } from "../../api/answers";
 import { useEffect, useState } from "react";
 import Header from "../Header/Header";
 
@@ -24,7 +23,7 @@ const HatePage: React.FC<HatePageProps> = ({ totalNr, currentNr, changeQuestion 
   }
 
   const onSubmitHate = (): void => {
-    setHate(hates);
+    submitHate(hates);
     changeQuestion(currentNr + 1);
   }
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getTopic, setTopic } from "../../api/answers";
+import { getTopic, submitTopic } from "../../api/answers";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 
@@ -27,7 +27,7 @@ const TopicsPage: React.FC<TopicsPageProps> = ( { totalNr, currentNr, changeQues
   };
 
   const onSubmitHate = (): void => {
-    setTopic(topics);
+    submitTopic(topics);
     changeQuestion(currentNr + 1);
   }
 

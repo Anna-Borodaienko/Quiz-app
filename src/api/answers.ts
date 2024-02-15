@@ -2,19 +2,19 @@ export const getLocale = (): string => {
   return localStorage.getItem('locale') || 'English';
 };
 
-export const setLocale = (locale: string): void => {
+export const submitLocale = (locale: string): void => {
   localStorage.setItem('locale', locale);
 };
 
-export const setGender = (gender: string): void => {
+export const submitGender = (gender: string): void => {
   localStorage.setItem('gender', gender);
 }
 
-export const setAge = (age: string): void => {
+export const submitAge = (age: string): void => {
   localStorage.setItem('age', age);
 }
 
-export const setHate = (hates: string[]): void => {
+export const submitHate = (hates: string[]): void => {
   localStorage.setItem('hates', hates.join());
 }
 
@@ -22,7 +22,7 @@ export const getHate = (): string | null => {
   return localStorage.getItem('hates' || '');
 }
 
-export const setTopic = (topics: string[]): void => {
+export const submitTopic = (topics: string[]): void => {
   localStorage.setItem('topics', topics.join());
 }
 
@@ -30,7 +30,7 @@ export const getTopic = (): string | null => {
   return localStorage.getItem('topics' || '');
 }
 
-export const setEmail = (email: string): void => {
+export const submitEmail = (email: string): void => {
   localStorage.setItem('email', email);
 }
 

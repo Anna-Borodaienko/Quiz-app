@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { setGender } from "../../api/answers";
+import { submitGender } from "../../api/answers";
 import { useTranslation } from "react-i18next";
 import Header from "../Header/Header";
 
@@ -14,7 +14,7 @@ const GenderPage: React.FC<GenderPageProps> = ({ totalNr, currentNr, changeQuest
   const { t } = useTranslation();
 
   const onChooseGender = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    setGender(e.currentTarget.innerText);
+    submitGender(e.currentTarget.innerText);
     changeQuestion(currentNr + 1);
   }
 
