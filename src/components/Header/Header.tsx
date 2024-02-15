@@ -27,7 +27,7 @@ const Counter = styled.div `
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 30px;
   width: 325px;
 `
 
@@ -50,21 +50,34 @@ const ProgressBar = styled.div<ProgressBarProps> `
   
 `
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  totalNr: number;
+  currentNr: number;
+  changeQuestion: (number: number) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ totalNr, currentNr, changeQuestion }) => {
+
+  const handleBack = () => {
+    changeQuestion(currentNr - 1);
+  }
+
   return (
     <HeaderWrapper>
       <RowContainer>
-        <Link to="/">
-          <Icon src={back} alt="Back"/>
-        </Link>
+        {currentNr > 1 && (
+          <Link to={`/quiz/${currentNr - 1}`}>
+            <Icon src={back} alt="Back" onClick={handleBack}/>
+          </Link>
+        )}
         <Counter>
-          2/5
+          {`${currentNr} / ${totalNr}`}
         </Counter>
       </RowContainer>
       <RowContainer>
         <BarContainer>
           <ProgressBar width="100%" color="#F3F4FA">
-            <ProgressBar width="40%" color="#E4229C"/>
+            <ProgressBar width={`${currentNr*20}%`} color="#E4229C"/>
           </ProgressBar>
         </BarContainer>
       </RowContainer>
