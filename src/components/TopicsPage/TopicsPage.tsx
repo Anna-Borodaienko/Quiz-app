@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { getTopic, setTopic } from "../../api/answers";
 import { Link } from "react-router-dom";
+import Header from "../Header/Header";
 
 interface TopicsPageProps {
+  totalNr: number;
   currentNr: number;
   changeQuestion: (number: number) => void;
 }
 
-const TopicsPage: React.FC<TopicsPageProps> = ( { currentNr, changeQuestion }: TopicsPageProps) => {
+const TopicsPage: React.FC<TopicsPageProps> = ( { totalNr, currentNr, changeQuestion }: TopicsPageProps) => {
   const [topics, setTopics] = useState<Array<string>>([]);
   
   useEffect(() => {
@@ -17,15 +19,12 @@ const TopicsPage: React.FC<TopicsPageProps> = ( { currentNr, changeQuestion }: T
 
   const onHandleTheme = (theme: string) => {
     const inList = topics.includes(theme);
-    let newList: string[] = [];
     if (inList) {
-      newList = topics.filter(item => item !== theme);
-    } else {
-      newList = [...topics];
-      newList.push(theme);
+      setTopics(topics.filter(item => item !== theme)) ;
+    } else if (topics.length < 3) {
+      setTopics([...topics, theme]);
     }
-    setTopics(newList);
-  }
+  };
 
   const onSubmitHate = (): void => {
     setTopic(topics);
@@ -34,6 +33,7 @@ const TopicsPage: React.FC<TopicsPageProps> = ( { currentNr, changeQuestion }: T
 
   return (
     <>
+      <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
       <div>What are your favorite topics?</div>
       <div>Choose up to 3 topics you like</div>
         <div onClick={() => onHandleTheme('Werewolf')}>

@@ -43,20 +43,17 @@ const App: React.FC = () => {
     setCurrentQuestionNr(number);
   }
 
-  console.log(currentQuestionNr);
-
   return (
     <AppWrapper>
       <StyledApp>
-        <header><Header totalNr={totalQuestions} currentNr={currentQuestionNr} changeQuestion={changeQuestion} /></header>
         <main>
           <Routes>
-            <Route path='/' element={<MainPage currentNr={currentQuestionNr} changeQuestion={changeQuestion}/>} />
-            <Route path='/quiz/1' element={<MainPage currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
-            <Route path='/quiz/2' element={<GenderPage currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
-            <Route path='/quiz/3' element={<AgePage currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
-            <Route path='/quiz/4' element={<HatePage currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
-            <Route path='/quiz/5' element={<TopicsPage currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
+            <Route path='/' element={<MainPage totalNr={totalQuestions} currentNr={currentQuestionNr <= totalQuestions ? currentQuestionNr : 1} changeQuestion={changeQuestion}/>} />
+            <Route path='/quiz/1' element={<MainPage totalNr={totalQuestions} currentNr={currentQuestionNr <= totalQuestions ? currentQuestionNr : 1} changeQuestion={changeQuestion} />} />
+            <Route path='/quiz/2' element={<GenderPage totalNr={totalQuestions} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
+            <Route path='/quiz/3' element={<AgePage totalNr={totalQuestions} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
+            <Route path='/quiz/4' element={<HatePage totalNr={totalQuestions} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
+            <Route path='/quiz/5' element={<TopicsPage totalNr={totalQuestions} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
             <Route path='/loader' element={<CircleProgressBar />} />
             <Route path='/email' element={<EmailPage />} />
             <Route path='/finish' element={<FinishPage />} />

@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { setGender } from "../../api/answers";
+import Header from "../Header/Header";
 
 interface AgePageProps {
+  totalNr: number;
   currentNr: number;
   changeQuestion: (number: number) => void;
 }
 
-const AgePage: React.FC<AgePageProps> = ({ currentNr, changeQuestion }: AgePageProps) => {
+const AgePage: React.FC<AgePageProps> = ({ totalNr, currentNr, changeQuestion }: AgePageProps) => {
 
   const onChooseAge = (e: React.MouseEvent<HTMLButtonElement>): void => {
     setGender(e.currentTarget.innerText);
@@ -15,6 +17,7 @@ const AgePage: React.FC<AgePageProps> = ({ currentNr, changeQuestion }: AgePageP
 
   return (
     <>
+    <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
     <div>What is your age?</div>
     <Link to={`/quiz/${currentNr + 1}`}>
       <button onClick={onChooseAge}>18-29</button>
