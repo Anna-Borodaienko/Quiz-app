@@ -7,6 +7,9 @@ import AgePage from './components/AgePage/AgePage';
 import { questions } from './constants/questions';
 import Header from './components/Header/Header';
 import HatePage from './components/HatePage/HatePage';
+import TopicsPage from './components/TopicsPage/TopicsPage';
+import CircleProgressBar from './components/CircleProgressBar/CircleProgressBar';
+import EmailPage from './components/EmailPage/EmailPage';
 
 const AppWrapper = styled.div`
   width: 100vw;
@@ -39,6 +42,8 @@ const App: React.FC = () => {
     setCurrentQuestionNr(number);
   }
 
+  console.log(currentQuestionNr);
+
   return (
     <AppWrapper>
       <StyledApp>
@@ -50,6 +55,9 @@ const App: React.FC = () => {
             <Route path='/quiz/2' element={<GenderPage currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
             <Route path='/quiz/3' element={<AgePage currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
             <Route path='/quiz/4' element={<HatePage currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
+            <Route path='/quiz/5' element={<TopicsPage currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
+            <Route path='/loader' element={<CircleProgressBar />} />
+            <Route path='/email' element={<EmailPage />} />
           </Routes>
         </main>
       </StyledApp>

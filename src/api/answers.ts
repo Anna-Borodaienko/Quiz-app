@@ -14,10 +14,18 @@ export const setAge = (age: string): void => {
   localStorage.setItem('age', age);
 }
 
-export const setHate = (hate: string[]): void => {
-  localStorage.setItem('hate', hate.join());
+export const setHate = (hates: string[]): void => {
+  localStorage.setItem('hates', hates.join());
 }
 
 export const getHate = (): string | null => {
-  return localStorage.getItem('hate' || '');
+  return localStorage.getItem('hates' || '');
+}
+
+export const setTopic = (topics: string[]): void => {
+  localStorage.setItem('topics', topics.join());
+}
+
+export const getTopic = (): string | null => {
+  return localStorage.getItem('topics' || '');
 }

@@ -53,7 +53,7 @@ const HatePage: React.FC<HatePageProps> = ({ currentNr, changeQuestion }: HatePa
         {hates.includes('Way too generic ending') ? <span>Checked</span> : <span>Unchecked</span>}
       </div>
     <Link to={`/quiz/${currentNr + 1}`}>
-      <button onClick={onSubmitHate}>Next</button>
+      <button onClick={onSubmitHate} disabled={hates.length === 0}>Next</button>
     </Link>
   </>
   )

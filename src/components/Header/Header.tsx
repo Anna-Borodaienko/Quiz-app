@@ -64,6 +64,8 @@ const Header: React.FC<HeaderProps> = ({ totalNr, currentNr, changeQuestion }) =
 
   return (
     <HeaderWrapper>
+      {currentNr <= 5 && (
+      <>
       <RowContainer>
         {currentNr > 1 && (
           <Link to={`/quiz/${currentNr - 1}`}>
@@ -81,6 +83,8 @@ const Header: React.FC<HeaderProps> = ({ totalNr, currentNr, changeQuestion }) =
           </ProgressBar>
         </BarContainer>
       </RowContainer>
+      </>
+    )}
     </HeaderWrapper>
   )
 }

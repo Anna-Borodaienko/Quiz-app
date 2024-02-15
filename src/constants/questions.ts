@@ -21,6 +21,7 @@ export const questions: Questions = {
   },
   5: {
     title: "What are your favorite topics?",
+    description: "Choose up to 3 topics you like",
     options: ["Werewolf", "Action", "Romance", "Young Adult", "Royal Obsession", "Bad Boy", "Billionaire"]
   }
 }
