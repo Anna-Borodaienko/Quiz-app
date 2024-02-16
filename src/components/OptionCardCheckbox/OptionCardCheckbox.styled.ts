@@ -2,20 +2,20 @@ import styled from "styled-components";
 import { colors } from "../../constants/styles";
 
 interface StyledButtonProps {
-  height?: string;
+  selected: boolean;
 }
 
 export const StyledButton = styled.button<StyledButtonProps>`
-  height: ${props => props.height === "small" ? "50px" : " 70px"};
+  height: 56px;
   width: 100%;
-  background-color: ${colors.midnightBlue};
+  background-color: ${props => props.selected ? colors.opacityMagenta20 : colors.midnightBlue};
+  border: 2px solid ${props => props.selected ? colors.lightMagenta : colors.darkPurple};
   border-radius: 16px;
-  padding: 12px 20px;
+  padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: row;
-  border: none;
   transition: background-color 0.5s;
 
   &:hover {

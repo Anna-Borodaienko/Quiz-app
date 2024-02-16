@@ -16,7 +16,7 @@ export const StyledButton = styled.button`
   transition: background-color 0.5s;
 
   &:hover {
-    background-color: ${colors.magenta};
+    background-color: ${colors.opacityMagenta40};
   }
 `
 

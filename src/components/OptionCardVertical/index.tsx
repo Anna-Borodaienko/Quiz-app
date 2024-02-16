@@ -8,22 +8,19 @@ interface OptionCardVerticalProps {
   handleChoose: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
+interface ImageMap {
+  [key: string]: string;
+}
+
+const image: ImageMap = {
+  "Female": female,
+  "Male": male,
+  "Other": other,
+};
+
 const OptionCardVertical:React.FC<OptionCardVerticalProps> = ({ option, handleChoose }: OptionCardVerticalProps) => {
 
-  const getImage = (option: string): string | undefined => {
-    switch (option) {
-      case 'Female':
-        return female;
-      case 'Male':
-        return male;
-      case 'Other':
-        return other;
-      default:
-        return undefined;
-    }
-  };
-
-  const imagePath = getImage(option);
+  const imagePath = image[option];
 
   return (
     <StyledButton onClick={handleChoose}>

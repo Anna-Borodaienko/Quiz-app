@@ -2,13 +2,14 @@ import { StyledButton, StyledOption } from "./OptionCard.styled";
 
 interface OptionCardProps {
   option: string;
-  handleChoose: (e: React.MouseEvent<HTMLButtonElement>) => void;
   height?: string;
+  handleChoose?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const OptionCard:React.FC<OptionCardProps> = ({ option, handleChoose, height }: OptionCardProps) => {
+const OptionCard:React.FC<OptionCardProps> = ({ option, handleChoose }: OptionCardProps) => {
+
   return (
-    <StyledButton onClick={handleChoose} height={height}>
+    <StyledButton onClick={handleChoose}>
       <StyledOption>{option}</StyledOption>
     </StyledButton>
   );

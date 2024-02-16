@@ -7,6 +7,10 @@ export const colors = {
   "lightGrey": "#f2f3f5",
   "grey": "#c4c8cc",
   "darkPurple": "#1f002b",
-  "white": "#fff"
+  "white": "#fff",
+  "lightMagenta": "#e4229b",
+  "opacityMagenta20": "#e4229b33",
+  "opacityMagenta40": "#e4229b66"
+
 }
 

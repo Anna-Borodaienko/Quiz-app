@@ -18,16 +18,16 @@ export const submitHate = (hates: string[]): void => {
   localStorage.setItem('hates', hates.join());
 }
 
-export const getHate = (): string | null => {
-  return localStorage.getItem('hates' || '');
+export const getHate = (): string[]=> {
+  return localStorage.getItem('hates' || '')?.split(',') || [];
 }
 
 export const submitTopic = (topics: string[]): void => {
   localStorage.setItem('topics', topics.join());
 }
 
-export const getTopic = (): string | null => {
-  return localStorage.getItem('topics' || '');
+export const getTopic = (): string[] => {
+  return localStorage.getItem('topics' || '')?.split(',') || [];
 }
 
 export const submitEmail = (email: string): void => {
