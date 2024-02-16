@@ -1,12 +1,12 @@
 import { styled } from "styled-components"
 
 export const HeaderWrapper = styled.div`
-  height: 100px;
-  margin: 20px 10px;
+  height: 80px;
+  margin: 10px 10px;
 `
 
 export const RowContainer = styled.div`
-  height: 50px;
+  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;

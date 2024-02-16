@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { submitLocale } from "../../api/answers";
 import { useTranslation } from "react-i18next";
-import Header from "../Header/Header";
+import Header from "../Header";
 import { Languages } from "../../i18n/constants";
+import TitleSection from "../TitleSection";
+import { OptionsContainer } from "../../styles/OptionsContainer";
+import OptionCard from "../OptionCard";
 
 interface MainPageProps {
   totalNr: number;
@@ -23,13 +26,14 @@ const MainPage: React.FC<MainPageProps> = ({ totalNr, currentNr, changeQuestion 
   return (
     <>
       <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
-      <div>What is your preferred language?</div>
-      <div>Choose language</div>
+      <TitleSection title={"What is your preferred language?"} subtitle={"Choose language"} />
       <Link to={`/quiz/${currentNr + 1}`}>
-        <button onClick={onChooseLang}>English</button>
-        <button onClick={onChooseLang}>French</button>
-        <button onClick={onChooseLang}>German</button>
-        <button onClick={onChooseLang}>Spanish</button>
+        <OptionsContainer>
+          <OptionCard option={"English"} handleChoose={onChooseLang} height={"small"}></OptionCard>
+          <OptionCard option={"French"} handleChoose={onChooseLang} height={"small"}></OptionCard>
+          <OptionCard option={"German"} handleChoose={onChooseLang} height={"small"}></OptionCard>
+          <OptionCard option={"Spanish"} handleChoose={onChooseLang} height={"small"}></OptionCard>
+        </OptionsContainer>
       </Link>
     </>
   )
