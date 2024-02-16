@@ -10,9 +10,10 @@ const Global = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  body {
     font-family: "Nunito Sans", sans-serif;
+  }
+  a {
+    text-decoration: none;
   }
 `
 

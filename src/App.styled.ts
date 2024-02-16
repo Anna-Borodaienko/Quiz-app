@@ -13,8 +13,12 @@ export const StyledApp = styled.div`
   width: 375px;
   height: 600px;
   color: ${colors.lightBlue};
-  background: ${colors.midnightBlue};
+  background: ${colors.darkPurple};
   border-radius: 2%;
   border: 2px solid ${colors.charcoal};
   box-shadow: 2px 4px 6px 0px ${colors.charcoal};
+`
+
+export const PageContainer = styled.div`
+  margin: 24px;
 `

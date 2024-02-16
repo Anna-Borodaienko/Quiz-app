@@ -1,7 +1,12 @@
 export const colors = {
   "midnightBlue": "#36173d",
   "charcoal": "#24262b",
-  "silver": "#f3f4fa",
   "magenta": "#e4229c",
-  "lightBlue": "#e8eaf2"
+  "silver": "#f3f4fa",
+  "lightBlue": "#e8eaf2",
+  "lightGrey": "#f2f3f5",
+  "grey": "#c4c8cc",
+  "darkPurple": "#1f002b",
+  "white": "#fff"
 }
+

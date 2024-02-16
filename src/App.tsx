@@ -9,7 +9,7 @@ import TopicsPage from './components/TopicsPage';
 import CircleProgressBar from './components/CircleProgressBar';
 import EmailPage from './components/EmailPage';
 import FinishPage from './components/FinishPage';
-import { AppWrapper, StyledApp } from './App.styled';
+import { AppWrapper, PageContainer, StyledApp } from './App.styled';
 
 const App: React.FC = () => {
   const [currentQuestionNr, setCurrentQuestionNr] = useState(1);
@@ -21,7 +21,7 @@ const App: React.FC = () => {
   return (
     <AppWrapper>
       <StyledApp>
-        <main>
+        <PageContainer>
           <Routes>
             <Route path='/' element={<MainPage totalNr={totalQuestionsNr} currentNr={currentQuestionNr <= totalQuestionsNr ? currentQuestionNr : 1} changeQuestion={changeQuestion}/>} />
             <Route path='/quiz/1' element={<MainPage totalNr={totalQuestionsNr} currentNr={currentQuestionNr <= totalQuestionsNr ? currentQuestionNr : 1} changeQuestion={changeQuestion} />} />
@@ -33,7 +33,7 @@ const App: React.FC = () => {
             <Route path='/email' element={<EmailPage />} />
             <Route path='/finish' element={<FinishPage />} />
           </Routes>
-        </main>
+        </PageContainer>
       </StyledApp>
     </AppWrapper>
   );
