@@ -20,5 +20,5 @@ export const StyledApp = styled.div`
 `
 
 export const PageContainer = styled.div`
-  margin: 24px;
+  margin: 0 24px;
 `

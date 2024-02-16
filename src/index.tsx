@@ -11,6 +11,7 @@ const Global = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
   }
   a {
     text-decoration: none;
