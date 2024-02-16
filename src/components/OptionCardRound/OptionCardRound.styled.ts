@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../constants/styles";
+import { animationDelay } from "../../constants/questions";
 
 interface StyledButtonProps {
   selected: boolean;
@@ -17,7 +18,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   justify-content: space-around;
   flex-direction: column;
   gap: 5px;
-  transition: background-color 0.5s;
+  transition: background-color ${animationDelay};
 
   &:hover {
     background-color: ${colors.opacityMagenta40};

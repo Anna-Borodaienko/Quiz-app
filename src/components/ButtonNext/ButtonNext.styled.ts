@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../constants/styles";
+import { animationDelay } from "../../constants/questions";
 
 export const StyledButton = styled.button`
   height: 50px;
@@ -17,7 +18,7 @@ export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.5s;
+  transition: background-color ${animationDelay};
 
   &:hover {
     background-color: ${colors.opacityMagenta40};
