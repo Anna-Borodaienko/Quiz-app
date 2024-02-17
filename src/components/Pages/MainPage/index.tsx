@@ -20,7 +20,7 @@ const MainPage: React.FC<MainPageProps> = ({ totalNr, currentNr, changeQuestion 
   const { i18n } = useTranslation();
 
   const onChooseLang = (option: string): void => {
-    submitLocale(option);
+    submitLocale(Languages[option]);
     changeQuestion(currentNr + 1);
     i18n.changeLanguage(Languages[option]);
   }
