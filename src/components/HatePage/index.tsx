@@ -5,7 +5,7 @@ import Header from "../Header";
 import TitleSection from "../TitleSection";
 import { OptionsContainer } from "../../styles/OptionsContainer";
 import OptionCardCheckbox from "../OptionCardCheckbox";
-import ButtonNext from "../ButtonNext";
+import ButtonNext from "../Button";
 
 interface HatePageProps {
   totalNr: number;

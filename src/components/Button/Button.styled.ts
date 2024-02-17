@@ -9,7 +9,6 @@ export const StyledButton = styled.button`
   border: ${colors.darkPurple};
   border-radius: 1000px;
   padding: 16px;
-  margin-top: 40px;
   color: ${colors.white};
   font-family: "Albert Sans", sans-serif;
   font-size: 17px;

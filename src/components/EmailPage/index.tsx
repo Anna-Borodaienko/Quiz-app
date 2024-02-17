@@ -3,7 +3,7 @@ import { submitEmail } from "../../api/answers";
 import { useState } from "react";
 import TitleSection from "../TitleSection";
 import Header from "../Header";
-import ButtonNext from "../ButtonNext";
+import ButtonNext from "../Button";
 import ErrorMessage from "../ErrorMessage";
 import EmailField from "../EmailField";
 import PolicyMessage from "../PolicyMessage";

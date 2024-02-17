@@ -5,7 +5,7 @@ import Header from "../Header";
 import TitleSection from "../TitleSection";
 import { OptionsContainer } from "../../styles/OptionsContainer";
 import OptionCardRound from "../OptionCardRound";
-import ButtonNext from "../ButtonNext";
+import ButtonNext from "../Button";
 
 interface TopicsPageProps {
   totalNr: number;

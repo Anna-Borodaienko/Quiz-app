@@ -13,6 +13,7 @@ export const colors = {
   "opacityMagenta40": "#e4229b66",
   "lightPurple": "#492752",
   "red": "#960019",
-  "pink": "#EB2F9A"
+  "pink": "#eb2f9a",
+  "blueGray": "#ececfb",
 }
 
