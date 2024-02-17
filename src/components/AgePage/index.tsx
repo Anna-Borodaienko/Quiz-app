@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { submitGender } from "../../api/answers";
+import { submitAge } from "../../api/answers";
 import Header from "../Header";
 import TitleSection from "../TitleSection";
 import { OptionsContainer } from "../../styles/OptionsContainer";
@@ -14,7 +14,7 @@ interface AgePageProps {
 const AgePage: React.FC<AgePageProps> = ({ totalNr, currentNr, changeQuestion }: AgePageProps) => {
 
   const onChooseAge = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    submitGender(e.currentTarget.innerText);
+    submitAge(e.currentTarget.innerText);
     changeQuestion(currentNr + 1);
   }
 
