@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { appHeight, colors } from "../../constants/styles";
+import { appHeight, colors } from "../../../constants/styles";
 
 export const Wrapper = styled.div`
   display: flex;
