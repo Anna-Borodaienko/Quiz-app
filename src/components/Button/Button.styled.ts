@@ -2,10 +2,14 @@ import styled from "styled-components";
 import { colors } from "../../constants/styles";
 import { animationDelay } from "../../constants/styles";
 
-export const StyledButton = styled.button`
+interface StyledButtonProps {
+  disabled: boolean;
+}
+
+export const StyledButton = styled.button<StyledButtonProps>`
   height: 50px;
   width: 100%;
-  background-color: ${colors.magenta};
+  background-color: ${props => props.disabled ? colors.opacityMagenta40 : colors.magenta};
   border: ${colors.darkPurple};
   border-radius: 1000px;
   margin-bottom: 24px;
