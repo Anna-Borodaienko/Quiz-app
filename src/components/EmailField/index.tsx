@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { emailPattern } from "../../constants/questions";
 import { Wrapper, StyledInput } from "./EmailField";
+import { useTranslation } from "react-i18next";
 
 interface EmailFieldProps {
   inputValue: string;
@@ -9,6 +10,8 @@ interface EmailFieldProps {
 }
 
 const EmailField: React.FC<EmailFieldProps> = ({ inputValue, onChangeValue, validate }: EmailFieldProps) => {
+
+  const { t } = useTranslation();
 
   const validateEmail = (email: string): boolean => {
     return (email.length > 0 && new RegExp(emailPattern).test(email));
@@ -20,7 +23,7 @@ const EmailField: React.FC<EmailFieldProps> = ({ inputValue, onChangeValue, vali
 
   return (
     <Wrapper>
-      <StyledInput id="email" name="email" type="text" placeholder="Your email" value={inputValue} onChange={onChangeValue} />
+      <StyledInput id="email" name="email" type="text" placeholder={t("Your email")} value={inputValue} onChange={onChangeValue} />
     </Wrapper>
   )
 }

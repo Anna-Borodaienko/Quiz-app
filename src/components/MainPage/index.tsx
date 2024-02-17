@@ -16,7 +16,7 @@ interface MainPageProps {
 
 const MainPage: React.FC<MainPageProps> = ({ totalNr, currentNr, changeQuestion }: MainPageProps) => {
   
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const onChooseLang = (e: React.MouseEvent<HTMLButtonElement>): void => {
     submitLocale(e.currentTarget.innerText);
@@ -27,13 +27,13 @@ const MainPage: React.FC<MainPageProps> = ({ totalNr, currentNr, changeQuestion 
   return (
     <PageContainerNoButton>
       <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
-      <TitleSection title={"What is your preferred language?"} subtitle={"Choose language"} />
+      <TitleSection title={t("What is your preferred language?")} subtitle={t("Choose language")} />
       <Link to={`/quiz/${currentNr + 1}`}>
         <OptionsContainer>
-          <OptionCard option={"English"} handleChoose={onChooseLang} height={"small"}></OptionCard>
-          <OptionCard option={"French"} handleChoose={onChooseLang} height={"small"}></OptionCard>
-          <OptionCard option={"German"} handleChoose={onChooseLang} height={"small"}></OptionCard>
-          <OptionCard option={"Spanish"} handleChoose={onChooseLang} height={"small"}></OptionCard>
+          <OptionCard option={t("English")} handleChoose={onChooseLang} height={"small"}></OptionCard>
+          <OptionCard option={t("French")} handleChoose={onChooseLang} height={"small"}></OptionCard>
+          <OptionCard option={t("German")} handleChoose={onChooseLang} height={"small"}></OptionCard>
+          <OptionCard option={t("Spanish")} handleChoose={onChooseLang} height={"small"}></OptionCard>
         </OptionsContainer>
       </Link>
     </PageContainerNoButton>

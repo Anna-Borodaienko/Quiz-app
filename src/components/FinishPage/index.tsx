@@ -6,8 +6,11 @@ import Button from "../Button";
 import finish from '../../images/finish.svg';
 import DownloadButton from "../DownloadButton";
 import { PageContainerWithButton } from "../../styles/PageContainerWithButton";
+import { useTranslation } from "react-i18next";
 
 const FinishPage:React.FC = () => {
+
+  const { t } = useTranslation();
 
   const onRetake = () => {
     clearAll();
@@ -17,8 +20,8 @@ const FinishPage:React.FC = () => {
     <PageContainerWithButton>
       <Container>
         <Header />
-        <StyledTitle>Thank you</StyledTitle>
-        <StyledText>for supporting us and passing quiz</StyledText>
+        <StyledTitle>{t("Thank you")}</StyledTitle>
+        <StyledText>{t("for supporting us and passing quiz")}</StyledText>
         <IconWrapper>
           <Icon src={finish} alt={"Done"} />
         </IconWrapper>

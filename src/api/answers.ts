@@ -1,3 +1,5 @@
+import { TFunction } from "i18next";
+
 export const submitLocale = (locale: string): void => {
   localStorage.setItem('locale', locale);
 };
@@ -50,7 +52,7 @@ export const clearAll = (): void => {
   localStorage.clear();
 }
 
-export const getUserInfo = (): {
+export const getUserInfo = (t: TFunction<"translation", undefined>): {
   order: string;
   title: string;
   type: string;
@@ -59,38 +61,38 @@ export const getUserInfo = (): {
   const data = [
     {
       order: "1",
-      title: "What is your preferred language?",
-      type: "single-select",
+      title: t("What is your preferred language?"),
+      type: t("single-select"),
       answer: getLocale()
     },
     {
       order: "2",
-      title: "What gender do you identify with?",
-      type: "single-select-image",
+      title: t("What gender do you identify with?"),
+      type: t("single-select-image"),
       answer: getGender()
     },
     {
       order: "3",
-      title: "What is your age?",
-      type: "single-select",
+      title: t("What is your age?"),
+      type: t("single-select"),
       answer: getAge()
     },
     {
       order: "4",
-      title: "What do you hate the most in a book?",
-      type: "multiple-select",
+      title: t("What do you hate the most in a book?"),
+      type: t("multiple-select"),
       answer: getHate().join()
     },
     {
       order: "5",
-      title: "What are your favorite topics?",
-      type: "bubble",
+      title: t("What are your favorite topics?"),
+      type: t("bubble"),
       answer: getTopic().join()
     },
     {
       order: "6",
-      title: "Email",
-      type: "email",
+      title: t("Email"),
+      type: t("email"),
       answer: getEmail()
     }
   ];

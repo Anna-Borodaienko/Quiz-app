@@ -9,10 +9,13 @@ import EmailField from "../EmailField";
 import PolicyMessage from "../PolicyMessage";
 import { Wrapper } from "./EmailPage.styled";
 import { PageContainerWithButton } from "../../styles/PageContainerWithButton";
+import { useTranslation } from "react-i18next";
 
 const EmailPage:React.FC = () => {
   const [inputValue, setInputValue] = useState<string>('');
   const [isError, setIsError] = useState(true);
+
+  const { t } = useTranslation();
 
   const onSubmitEmail = () => {
     submitEmail(inputValue);
@@ -32,14 +35,14 @@ const EmailPage:React.FC = () => {
     <PageContainerWithButton>
       <>
         <Header />
-        <TitleSection title={"Email"} subtitle={"Enter your email to get full access"} />
+        <TitleSection title={t("Email")} subtitle={t("Enter your email to get full access")} />
         <EmailField inputValue={inputValue} onChangeValue={onChangeValue} validate={validate} />
-        {isError && inputValue !== '' ? <ErrorMessage text={"Invalid email"}/> : <ErrorMessage text={""}/>}
+        {isError && inputValue !== '' ? <ErrorMessage text={t("Invalid email")}/> : <ErrorMessage text={""}/>}
         <PolicyMessage />
       </>
       <>
         <Link to="/finish">
-          <ButtonNext onClick={onSubmitEmail} disabled={isError} title={"Next"} />
+          <ButtonNext onClick={onSubmitEmail} disabled={isError} title={t("Next")} />
         </Link>
       </>
     </PageContainerWithButton>
