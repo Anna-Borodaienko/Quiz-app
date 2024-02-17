@@ -15,8 +15,8 @@ interface GenderPageProps {
 
 const GenderPage: React.FC<GenderPageProps> = ({ totalNr, currentNr, changeQuestion }: GenderPageProps) => {
 
-  const onChooseGender = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    submitGender(e.currentTarget.innerText);
+  const onChooseGender = (option: string): void => {
+    submitGender(option);
     changeQuestion(currentNr + 1);
   }
 

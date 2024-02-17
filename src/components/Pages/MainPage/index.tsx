@@ -17,12 +17,12 @@ interface MainPageProps {
 
 const MainPage: React.FC<MainPageProps> = ({ totalNr, currentNr, changeQuestion }: MainPageProps) => {
   
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
 
-  const onChooseLang = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    submitLocale(e.currentTarget.innerText);
+  const onChooseLang = (option: string): void => {
+    submitLocale(option);
     changeQuestion(currentNr + 1);
-    i18n.changeLanguage((Languages as any)[e.currentTarget.innerText]);
+    i18n.changeLanguage(Languages[option]);
   }
 
   return (

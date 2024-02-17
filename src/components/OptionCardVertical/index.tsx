@@ -7,7 +7,7 @@ import { ImageMap } from "../../types/questions";
 
 interface OptionCardVerticalProps {
   option: string;
-  handleChoose: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  handleChoose: (option: string) => void;
 }
 
 const image: ImageMap = {
@@ -20,10 +20,14 @@ const OptionCardVertical:React.FC<OptionCardVerticalProps> = ({ option, handleCh
 
   const { t } = useTranslation();
 
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    handleChoose(option);
+  }
+
   const imagePath = image[option];
 
   return (
-    <StyledButton onClick={handleChoose}>
+    <StyledButton onClick={handleClick}>
       <IconWrapper>
         <Icon src={imagePath} alt={option} />
       </IconWrapper>

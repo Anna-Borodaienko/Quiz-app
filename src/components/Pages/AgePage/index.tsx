@@ -15,8 +15,8 @@ interface AgePageProps {
 
 const AgePage: React.FC<AgePageProps> = ({ totalNr, currentNr, changeQuestion }: AgePageProps) => {
 
-  const onChooseAge = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    submitAge(e.currentTarget.innerText);
+  const onChooseAge = (option: string): void => {
+    submitAge(option);
     changeQuestion(currentNr + 1);
   }
 
