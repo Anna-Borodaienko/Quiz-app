@@ -2,7 +2,7 @@
 
 The Quiz of reader preferences
 
-[DEMO-LINK](https://anna-borodaienko.github.io/quiz-app/) 
+[DEMO-LINK](https://quiz-read-app.netlify.app/) 
 
 ## Tech Stack
 
