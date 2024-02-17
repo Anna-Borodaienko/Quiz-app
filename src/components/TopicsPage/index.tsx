@@ -6,6 +6,7 @@ import TitleSection from "../TitleSection";
 import { OptionsContainer } from "../../styles/OptionsContainer";
 import OptionCardRound from "../OptionCardRound";
 import ButtonNext from "../Button";
+import { PageContainerWithButton } from "../../styles/PageContainerWithButton";
 
 interface TopicsPageProps {
   totalNr: number;
@@ -34,7 +35,7 @@ const TopicsPage: React.FC<TopicsPageProps> = ( { totalNr, currentNr, changeQues
   }
 
   return (
-    <>
+    <PageContainerWithButton>
       <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
       <TitleSection title={"What are your favorite topics?"} subtitle={"Choose up to 3 topics you like"} />
       <OptionsContainer direction={"row"} wrap={"wrap"}>
@@ -49,7 +50,7 @@ const TopicsPage: React.FC<TopicsPageProps> = ( { totalNr, currentNr, changeQues
       <Link to="/loader">
         <ButtonNext onClick={onSubmitHate} disabled={topics.length === 0} title={"Next"} />
       </Link>
-    </>
+    </PageContainerWithButton>
   );
 };
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../constants/styles";
-import { animationDelay } from "../../constants/questions";
+import { animationDelay } from "../../constants/styles";
 
 export const StyledButton = styled.button`
   height: 50px;
@@ -8,6 +8,7 @@ export const StyledButton = styled.button`
   background-color: ${colors.magenta};
   border: ${colors.darkPurple};
   border-radius: 1000px;
+  margin-bottom: 24px;
   padding: 16px;
   color: ${colors.white};
   font-family: "Albert Sans", sans-serif;

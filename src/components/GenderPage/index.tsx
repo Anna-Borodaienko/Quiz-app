@@ -5,6 +5,7 @@ import Header from "../Header";
 import TitleSection from "../TitleSection";
 import { OptionsContainer } from "../../styles/OptionsContainer";
 import OptionCardVertical from "../OptionCardVertical";
+import { PageContainerNoButton } from "../../styles/PageContainerNoButton";
 
 interface GenderPageProps {
   totalNr: number;
@@ -22,7 +23,7 @@ const GenderPage: React.FC<GenderPageProps> = ({ totalNr, currentNr, changeQuest
   }
 
   return (
-    <>
+    <PageContainerNoButton>
       <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
       <TitleSection title={t("What gender do you identify with?")} subtitle={"Please share how do you identify yourself"} />
       <Link to={`/quiz/${currentNr + 1}`}>
@@ -32,7 +33,7 @@ const GenderPage: React.FC<GenderPageProps> = ({ totalNr, currentNr, changeQuest
           <OptionCardVertical option={"Other"} handleChoose={onChooseGender}></OptionCardVertical>
         </OptionsContainer>
       </Link>
-    </>
+    </PageContainerNoButton>
   )
 }
 

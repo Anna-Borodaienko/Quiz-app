@@ -6,6 +6,7 @@ import TitleSection from "../TitleSection";
 import { OptionsContainer } from "../../styles/OptionsContainer";
 import OptionCardCheckbox from "../OptionCardCheckbox";
 import ButtonNext from "../Button";
+import { PageContainerWithButton } from "../../styles/PageContainerWithButton";
 
 interface HatePageProps {
   totalNr: number;
@@ -32,19 +33,23 @@ const HatePage: React.FC<HatePageProps> = ({ totalNr, currentNr, changeQuestion 
   }
 
   return (
-    <>
-      <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
-      <TitleSection title={"What do you hate the most in a book?"} />
-      <OptionsContainer>
-        <OptionCardCheckbox option={"Lack of logic"} handleSelect={onHandleTheme} selected={isSelected("Lack of logic")}></OptionCardCheckbox>
-        <OptionCardCheckbox option={"A slow speed"} handleSelect={onHandleTheme} selected={isSelected("A slow speed")}></OptionCardCheckbox>
-        <OptionCardCheckbox option={"Lack of humor"} handleSelect={onHandleTheme} selected={isSelected("Lack of humor")}></OptionCardCheckbox>
-        <OptionCardCheckbox option={"Way too generic ending"} handleSelect={onHandleTheme} selected={isSelected("Way too generic ending")}></OptionCardCheckbox>
-      </OptionsContainer>
-      <Link to={`/quiz/${currentNr + 1}`}>
-        <ButtonNext onClick={onSubmitHate} disabled={hates.length === 0} title={"Next"} />
-      </Link>
-    </>
+    <PageContainerWithButton>
+      <div>
+        <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
+        <TitleSection title={"What do you hate the most in a book?"} />
+        <OptionsContainer>
+          <OptionCardCheckbox option={"Lack of logic"} handleSelect={onHandleTheme} selected={isSelected("Lack of logic")}></OptionCardCheckbox>
+          <OptionCardCheckbox option={"A slow speed"} handleSelect={onHandleTheme} selected={isSelected("A slow speed")}></OptionCardCheckbox>
+          <OptionCardCheckbox option={"Lack of humor"} handleSelect={onHandleTheme} selected={isSelected("Lack of humor")}></OptionCardCheckbox>
+          <OptionCardCheckbox option={"Way too generic ending"} handleSelect={onHandleTheme} selected={isSelected("Way too generic ending")}></OptionCardCheckbox>
+        </OptionsContainer>
+      </div>
+      <div>
+        <Link to={`/quiz/${currentNr + 1}`}>
+          <ButtonNext onClick={onSubmitHate} disabled={hates.length === 0} title={"Next"} />
+        </Link>
+      </div>
+    </PageContainerWithButton>
   )
 }
 

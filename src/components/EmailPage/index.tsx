@@ -8,6 +8,7 @@ import ErrorMessage from "../ErrorMessage";
 import EmailField from "../EmailField";
 import PolicyMessage from "../PolicyMessage";
 import { Wrapper } from "./EmailPage.styled";
+import { PageContainerWithButton } from "../../styles/PageContainerWithButton";
 
 const EmailPage:React.FC = () => {
   const [inputValue, setInputValue] = useState<string>('');
@@ -28,7 +29,7 @@ const EmailPage:React.FC = () => {
   }
 
   return (
-    <Wrapper>
+    <PageContainerWithButton>
       <>
         <Header />
         <TitleSection title={"Email"} subtitle={"Enter your email to get full access"} />
@@ -41,7 +42,7 @@ const EmailPage:React.FC = () => {
           <ButtonNext onClick={onSubmitEmail} disabled={isError} title={"Next"} />
         </Link>
       </>
-    </Wrapper>
+    </PageContainerWithButton>
   )
 };
 

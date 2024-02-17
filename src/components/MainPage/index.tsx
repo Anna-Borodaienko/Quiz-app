@@ -6,6 +6,7 @@ import { Languages } from "../../i18n/constants";
 import TitleSection from "../TitleSection";
 import { OptionsContainer } from "../../styles/OptionsContainer";
 import OptionCard from "../OptionCard";
+import { PageContainerNoButton } from "../../styles/PageContainerNoButton";
 
 interface MainPageProps {
   totalNr: number;
@@ -24,7 +25,7 @@ const MainPage: React.FC<MainPageProps> = ({ totalNr, currentNr, changeQuestion 
   }
 
   return (
-    <>
+    <PageContainerNoButton>
       <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
       <TitleSection title={"What is your preferred language?"} subtitle={"Choose language"} />
       <Link to={`/quiz/${currentNr + 1}`}>
@@ -35,7 +36,7 @@ const MainPage: React.FC<MainPageProps> = ({ totalNr, currentNr, changeQuestion 
           <OptionCard option={"Spanish"} handleChoose={onChooseLang} height={"small"}></OptionCard>
         </OptionsContainer>
       </Link>
-    </>
+    </PageContainerNoButton>
   )
 }
 

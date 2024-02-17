@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { clearAll } from "../../api/answers";
 import Header from "../Header";
-import { Container, Icon, IconWrapper, StyledText, StyledTitle, Wrapper } from "./FinishPage.styled";
+import { Container, Icon, IconWrapper, StyledText, StyledTitle } from "./FinishPage.styled";
 import Button from "../Button";
 import finish from '../../images/finish.svg';
 import DownloadButton from "../DownloadButton";
+import { PageContainerWithButton } from "../../styles/PageContainerWithButton";
 
 const FinishPage:React.FC = () => {
 
@@ -13,7 +14,7 @@ const FinishPage:React.FC = () => {
   }
 
   return (
-    <Wrapper>
+    <PageContainerWithButton>
       <Container>
         <Header />
         <StyledTitle>Thank you</StyledTitle>
@@ -28,7 +29,7 @@ const FinishPage:React.FC = () => {
           <Button onClick={onRetake} title={"Retake quiz"} />
         </Link>
       </Container>
-    </Wrapper>
+    </PageContainerWithButton>
   )
 }
 

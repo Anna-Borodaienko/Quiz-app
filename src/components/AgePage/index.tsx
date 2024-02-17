@@ -4,6 +4,7 @@ import Header from "../Header";
 import TitleSection from "../TitleSection";
 import { OptionsContainer } from "../../styles/OptionsContainer";
 import OptionCard from "../OptionCard";
+import { PageContainerNoButton } from "../../styles/PageContainerNoButton";
 
 interface AgePageProps {
   totalNr: number;
@@ -19,7 +20,7 @@ const AgePage: React.FC<AgePageProps> = ({ totalNr, currentNr, changeQuestion }:
   }
 
   return (
-    <>
+    <PageContainerNoButton>
       <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
       <TitleSection title={"What is your age?"} />
       <Link to={`/quiz/${currentNr + 1}`}>
@@ -30,7 +31,7 @@ const AgePage: React.FC<AgePageProps> = ({ totalNr, currentNr, changeQuestion }:
             <OptionCard option={"50+"} handleChoose={onChooseAge}></OptionCard>
           </OptionsContainer>
       </Link>
-    </>
+    </PageContainerNoButton>
   )
 }
 

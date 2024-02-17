@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../constants/styles";
-import { animationDelay } from "../../constants/questions";
+import { animationDelay } from "../../constants/styles";
 
 export const StyledButton = styled.button`
   height: 140px;

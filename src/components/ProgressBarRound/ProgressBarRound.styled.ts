@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { loaderDelay } from "../../constants/questions";
+import { loaderDelay } from "../../constants/styles";
 import { colors } from "../../constants/styles";
 
 export const StyledBar = styled.div`

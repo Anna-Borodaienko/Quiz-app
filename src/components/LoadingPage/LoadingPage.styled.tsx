@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { colors } from "../../constants/styles";
+import { appHeight, colors } from "../../constants/styles";
 
 export const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: ${appHeight};
 `
 
 export const Container = styled.div`
