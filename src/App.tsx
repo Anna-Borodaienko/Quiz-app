@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MainPage from './components/Pages/MainPage';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import GenderPage from './components/Pages/GenderPage';
 import AgePage from './components/Pages/AgePage';
-import { totalQuestionsNr } from './constants/questions';
 import HatePage from './components/Pages/HatePage';
 import TopicsPage from './components/Pages/TopicsPage';
 import EmailPage from './components/Pages/EmailPage';
