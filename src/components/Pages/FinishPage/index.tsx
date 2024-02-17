@@ -9,7 +9,7 @@ import { PageContainerWithButton } from "../../../styles/PageContainerWithButton
 import { useTranslation } from "react-i18next";
 import Motion from "../../../styles/Motion";
 
-const FinishPage:React.FC = () => {
+const FinishPage: React.FC = () => {
 
   const { i18n, t } = useTranslation();
 

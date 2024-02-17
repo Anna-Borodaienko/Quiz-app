@@ -8,15 +8,12 @@ import OptionCardCheckbox from "../../OptionCardCheckbox";
 import Button from "../../Button";
 import { PageContainerWithButton } from "../../../styles/PageContainerWithButton";
 import Motion from "../../../styles/Motion";
+import { receiveCurrentPageNr } from "../../../utils/receiveCurrentPageNr";
 
-interface HatePageProps {
-  totalNr: number;
-  currentNr: number;
-  changeQuestion: (number: number) => void;
-}
-
-const HatePage: React.FC<HatePageProps> = ({ totalNr, currentNr, changeQuestion }: HatePageProps) => {
+const HatePage: React.FC = () => {
   const [hates, setHates] = useState<string[]>(getHate());
+
+  const currentPageNr = receiveCurrentPageNr();
 
   const onHandleTheme = (option: string, selected: boolean) => {
     if (selected) {
@@ -30,14 +27,13 @@ const HatePage: React.FC<HatePageProps> = ({ totalNr, currentNr, changeQuestion 
 
   const onSubmitHate = (): void => {
     submitHate(hates);
-    changeQuestion(currentNr + 1);
   }
 
   return (
     <Motion>
       <PageContainerWithButton>
         <div>
-          <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
+          <Header />
           <TitleSection title="What do you hate the most in a book?" />
           <OptionsContainer>
             <OptionCardCheckbox option="Lack of logic" handleSelect={onHandleTheme} selected={isSelected("Lack of logic")}></OptionCardCheckbox>
@@ -47,7 +43,7 @@ const HatePage: React.FC<HatePageProps> = ({ totalNr, currentNr, changeQuestion 
           </OptionsContainer>
         </div>
         <div>
-          <Link to={`/quiz/${currentNr + 1}`}>
+          <Link to={`/quiz/${currentPageNr + 1}`}>
             <Button onClick={onSubmitHate} disabled={hates.length === 0} title="Next" />
           </Link>
         </div>

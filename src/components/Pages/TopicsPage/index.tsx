@@ -9,16 +9,9 @@ import ButtonNext from "../../Button";
 import { PageContainerWithButton } from "../../../styles/PageContainerWithButton";
 import Motion from "../../../styles/Motion";
 
-interface TopicsPageProps {
-  totalNr: number;
-  currentNr: number;
-  changeQuestion: (number: number) => void;
-}
-
-const TopicsPage: React.FC<TopicsPageProps> = ( { totalNr, currentNr, changeQuestion }: TopicsPageProps) => {
+const TopicsPage: React.FC = () => {
   const [topics, setTopics] = useState<string[]>(getTopic());
 
-  
   const onHandleTheme = (option: string, selected: boolean) => {
     if (!selected) {
       setTopics(topics.filter(topic => topic !== option)) ;
@@ -33,13 +26,12 @@ const TopicsPage: React.FC<TopicsPageProps> = ( { totalNr, currentNr, changeQues
 
   const onSubmitHate = (): void => {
     submitTopic(topics);
-    changeQuestion(currentNr + 1);
   }
 
   return (
     <Motion>
       <PageContainerWithButton>
-        <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
+        <Header />
         <TitleSection title="What are your favorite topics?" subtitle="Choose up to 3 topics you like" />
         <OptionsContainer direction={"row"} wrap={"wrap"}>
           <OptionCardRound option="Werewolf" handleSelect={onHandleTheme} selected={isSelected("Werewolf")}></OptionCardRound>

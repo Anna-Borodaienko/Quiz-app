@@ -10,7 +10,7 @@ import PolicyMessage from "../../PolicyMessage";
 import { PageContainerWithButton } from "../../../styles/PageContainerWithButton";
 import Motion from "../../../styles/Motion";
 
-const EmailPage:React.FC = () => {
+const EmailPage: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>('');
   const [isError, setIsError] = useState(true);
 

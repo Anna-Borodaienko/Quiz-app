@@ -4,35 +4,31 @@ import back from '../../images/back.svg';
 import { HeaderWrapper, RowContainer, Icon, IconWrapper } from './Header.styled';
 import ProgressBarLine from '../ProgressBarLine';
 import Counter from '../Counter';
+import { receiveCurrentPageNr } from '../../utils/receiveCurrentPageNr';
+import { totalQuestionsNr } from '../../constants/questions';
 
-interface HeaderProps {
-  totalNr?: number;
-  currentNr?: number;
-  changeQuestion?: (number: number) => void;
-}
+const Header: React.FC = () => {
+  
+  const currentPageNr = receiveCurrentPageNr();
 
-const Header: React.FC<HeaderProps> = ({ totalNr=0, currentNr=0, changeQuestion=()=>{} }) => {
+  const totalNr = totalQuestionsNr;
 
-  const handleBack = () => {
-    changeQuestion(currentNr - 1);
-  }
-
-  return (
+   return (
     <>
-      {currentNr > 0 && currentNr <= 5 ? (
+      {currentPageNr > 0 && currentPageNr <= 5 ? (
         <HeaderWrapper>
           <RowContainer>
-            {currentNr > 1 ? (
-              <Link to={`/quiz/${currentNr - 1}`}>
+            {currentPageNr > 1 ? (
+              <Link to={`/quiz/${currentPageNr - 1}`}>
                 <IconWrapper>
-                  <Icon src={back} alt="Back" onClick={handleBack}/>
+                  <Icon src={back} alt="Back" />
                 </IconWrapper>
               </Link>
             ) : <IconWrapper />}
-            <Counter totalNr={totalNr} currentNr={currentNr} />
+            <Counter totalNr={totalNr} currentNr={currentPageNr} />
           </RowContainer>
           <RowContainer>
-            <ProgressBarLine currentNr={currentNr} />
+            <ProgressBarLine currentNr={currentPageNr} />
           </RowContainer>
         </HeaderWrapper>
         ) : <HeaderWrapper />

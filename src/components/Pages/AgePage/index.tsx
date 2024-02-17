@@ -6,26 +6,22 @@ import { OptionsContainer } from "../../../styles/OptionsContainer";
 import OptionCard from "../../OptionCard";
 import { PageContainerNoButton } from "../../../styles/PageContainerNoButton";
 import Motion from "../../../styles/Motion";
+import { receiveCurrentPageNr } from "../../../utils/receiveCurrentPageNr";
 
-interface AgePageProps {
-  totalNr: number;
-  currentNr: number;
-  changeQuestion: (number: number) => void;
-}
+const AgePage: React.FC = () => {
 
-const AgePage: React.FC<AgePageProps> = ({ totalNr, currentNr, changeQuestion }: AgePageProps) => {
+  const currentPageNr = receiveCurrentPageNr();
 
   const onChooseAge = (option: string): void => {
     submitAge(option);
-    changeQuestion(currentNr + 1);
   }
 
   return (
     <Motion>
       <PageContainerNoButton>
-        <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
+        <Header />
         <TitleSection title="What is your age?" />
-        <Link to={`/quiz/${currentNr + 1}`}>
+        <Link to={`/quiz/${currentPageNr + 1}`}>
           <OptionsContainer>
               <OptionCard option="18-29 years" handleChoose={onChooseAge}></OptionCard>
               <OptionCard option="30-39 years" handleChoose={onChooseAge}></OptionCard>

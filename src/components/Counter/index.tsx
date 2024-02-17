@@ -7,6 +7,7 @@ interface CounterProps {
 }
 
 const Counter:React.FC<CounterProps> = ({ totalNr, currentNr }: CounterProps) => {
+
   return (
     <StyledCounter>
       <StyledCount color={colors.magenta}>{currentNr}</StyledCount>

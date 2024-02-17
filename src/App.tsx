@@ -13,11 +13,6 @@ import LoadingPage from './components/Pages/LoadingPage';
 import { AnimatePresence } from 'framer-motion';
 
 const App: React.FC = () => {
-  const [currentQuestionNr, setCurrentQuestionNr] = useState(1);
-
-  const changeQuestion = (number: number) => {
-    setCurrentQuestionNr(number);
-  }
 
   const location = useLocation();
 
@@ -26,12 +21,12 @@ const App: React.FC = () => {
       <StyledApp>
         <AnimatePresence mode='wait'>
           <Routes location={location} key={location.pathname}>
-          <Route index path='/' element={<MainPage totalNr={totalQuestionsNr} currentNr={currentQuestionNr <= totalQuestionsNr ? currentQuestionNr : 1} changeQuestion={changeQuestion}/>} />
-          <Route path='/quiz/1' element={<MainPage totalNr={totalQuestionsNr} currentNr={currentQuestionNr <= totalQuestionsNr ? currentQuestionNr : 1} changeQuestion={changeQuestion} />} />
-          <Route path='/quiz/2' element={<GenderPage totalNr={totalQuestionsNr} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
-          <Route path='/quiz/3' element={<AgePage totalNr={totalQuestionsNr} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
-          <Route path='/quiz/4' element={<HatePage totalNr={totalQuestionsNr} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
-          <Route path='/quiz/5' element={<TopicsPage totalNr={totalQuestionsNr} currentNr={currentQuestionNr} changeQuestion={changeQuestion} />} />
+          <Route index path='/' element={<MainPage />} />
+          <Route path='/quiz/1' element={<MainPage />} />
+          <Route path='/quiz/2' element={<GenderPage />} />
+          <Route path='/quiz/3' element={<AgePage />} />
+          <Route path='/quiz/4' element={<HatePage />} />
+          <Route path='/quiz/5' element={<TopicsPage />} />
           <Route path='/loader' element={<LoadingPage />} />
           <Route path='/email' element={<EmailPage />} />
           <Route path='/finish' element={<FinishPage />} />
