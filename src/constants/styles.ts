@@ -15,5 +15,9 @@ export const colors = {
   "red": "#960019",
   "pink": "#eb2f9a",
   "blueGray": "#ececfb",
-}
+};
 
+export const appWidth = "375px";
+export const appHeight = "600px";
+export const loaderDelay = "5000ms";
+export const animationDelay = "500ms";
