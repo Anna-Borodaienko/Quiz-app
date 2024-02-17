@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { StyledButton } from "./Button.styled";
 
 interface ButtonProps {
@@ -7,9 +8,13 @@ interface ButtonProps {
 } 
 
 const Button:React.FC<ButtonProps> = ({ onClick, disabled, title }: ButtonProps) => {
+
+  const { t } = useTranslation();
+
+
   return (
     <StyledButton onClick={onClick} disabled={disabled}>
-      {title}
+      {t(title)}
     </StyledButton>
   )
 }

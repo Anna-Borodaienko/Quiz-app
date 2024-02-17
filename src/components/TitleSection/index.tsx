@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Title, Subtitle } from "./TitleSection.styled";
 
 interface TitleSectionProps {
@@ -6,10 +7,13 @@ interface TitleSectionProps {
 }
 
 const TitleSection:React.FC<TitleSectionProps> = ({ title, subtitle }: TitleSectionProps) => {
+
+  const { t } = useTranslation();
+
   return (
     <>
-      <Title>{title}</Title>
-      <Subtitle>{subtitle}</Subtitle>
+      <Title>{t(title)}</Title>
+      {subtitle && <Subtitle>{t(subtitle)}</Subtitle>}
     </>
   )
 }

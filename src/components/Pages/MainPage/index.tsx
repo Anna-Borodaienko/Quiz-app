@@ -29,13 +29,13 @@ const MainPage: React.FC<MainPageProps> = ({ totalNr, currentNr, changeQuestion 
     <Motion>
       <PageContainerNoButton>
         <Header totalNr={totalNr} currentNr={currentNr} changeQuestion={changeQuestion} />
-        <TitleSection title={t("What is your preferred language?")} subtitle={t("Choose language")} />
+        <TitleSection title="What is your preferred language?" subtitle="Choose language" />
         <Link to={`/quiz/${currentNr + 1}`}>
           <OptionsContainer>
-            <OptionCard option={t("English")} handleChoose={onChooseLang} height={"small"}></OptionCard>
-            <OptionCard option={t("French")} handleChoose={onChooseLang} height={"small"}></OptionCard>
-            <OptionCard option={t("German")} handleChoose={onChooseLang} height={"small"}></OptionCard>
-            <OptionCard option={t("Spanish")} handleChoose={onChooseLang} height={"small"}></OptionCard>
+            <OptionCard option={"English"} handleChoose={onChooseLang} height={"small"}></OptionCard>
+            <OptionCard option={"French"} handleChoose={onChooseLang} height={"small"}></OptionCard>
+            <OptionCard option={"German"} handleChoose={onChooseLang} height={"small"}></OptionCard>
+            <OptionCard option={"Spanish"} handleChoose={onChooseLang} height={"small"}></OptionCard>
           </OptionsContainer>
         </Link>
       </PageContainerNoButton>

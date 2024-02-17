@@ -32,7 +32,7 @@ const FinishPage:React.FC = () => {
         <Container>
           <DownloadButton />
           <Link to="/quiz/1">
-            <Button onClick={onRetake} title={t("Retake quiz")} />
+            <Button onClick={onRetake} title="Retake quiz" />
           </Link>
         </Container>
       </PageContainerWithButton>
