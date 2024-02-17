@@ -9,7 +9,7 @@ import TopicsPage from './components/TopicsPage';
 import EmailPage from './components/EmailPage';
 import FinishPage from './components/FinishPage';
 import { AppWrapper, PageContainer, StyledApp } from './App.styled';
-import LoadingPage from './LoadingPage';
+import LoadingPage from './components/LoadingPage';
 
 const App: React.FC = () => {
   const [currentQuestionNr, setCurrentQuestionNr] = useState(1);

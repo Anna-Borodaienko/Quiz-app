@@ -6,21 +6,21 @@ import ProgressBarLine from '../ProgressBarLine';
 import Counter from '../Counter';
 
 interface HeaderProps {
-  totalNr: number;
-  currentNr: number;
-  changeQuestion: (number: number) => void;
+  totalNr?: number;
+  currentNr?: number;
+  changeQuestion?: (number: number) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ totalNr, currentNr, changeQuestion }) => {
+const Header: React.FC<HeaderProps> = ({ totalNr=0, currentNr=0, changeQuestion=()=>{} }) => {
 
   const handleBack = () => {
     changeQuestion(currentNr - 1);
   }
 
   return (
-    <HeaderWrapper>
-      {currentNr <= 5 && (
-        <>
+    <>
+      {currentNr > 0 && currentNr <= 5 ? (
+        <HeaderWrapper>
           <RowContainer>
             {currentNr > 1 ? (
               <Link to={`/quiz/${currentNr - 1}`}>
@@ -34,9 +34,10 @@ const Header: React.FC<HeaderProps> = ({ totalNr, currentNr, changeQuestion }) =
           <RowContainer>
             <ProgressBarLine currentNr={currentNr} />
           </RowContainer>
-        </>
-      )}
-    </HeaderWrapper>
+        </HeaderWrapper>
+        ) : <HeaderWrapper />
+      }
+    </>
   )
 }
 

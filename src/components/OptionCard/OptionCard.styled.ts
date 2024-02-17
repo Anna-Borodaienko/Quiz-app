@@ -7,7 +7,7 @@ interface StyledButtonProps {
 }
 
 export const StyledButton = styled.button<StyledButtonProps>`
-  height: ${props => props.height === "small" ? "50px" : " 70px"};
+  height: ${props => props.height === "small" ? "50px" : "70px"};
   width: 100%;
   background-color: ${colors.midnightBlue};
   border-radius: 16px;

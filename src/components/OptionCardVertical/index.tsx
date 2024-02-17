@@ -1,4 +1,4 @@
-import { Icon, IconWrapper, StyledButton, StyledOption } from "./OptionCardVertical.styles";
+import { Icon, IconWrapper, StyledButton, StyledOption } from "./OptionCardVertical.styled";
 import female from '../../images/female.png';
 import male from '../../images/male.png';
 import other from '../../images/other.png';

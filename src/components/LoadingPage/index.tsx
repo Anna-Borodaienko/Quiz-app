@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import ProgressBarRound from "../components/ProgressBarRound";
+import ProgressBarRound from "../ProgressBarRound";
 import { Container, StyledMessage, Wrapper } from "./LoadingPage.styled";
 
 const LoadingPage:React.FC = () => {
