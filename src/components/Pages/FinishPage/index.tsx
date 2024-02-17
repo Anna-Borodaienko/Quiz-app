@@ -11,10 +11,11 @@ import Motion from "../../../styles/Motion";
 
 const FinishPage:React.FC = () => {
 
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const onRetake = () => {
     clearAll();
+    i18n.changeLanguage('en');
   }
 
   return (
@@ -31,7 +32,7 @@ const FinishPage:React.FC = () => {
         <Container>
           <DownloadButton />
           <Link to="/quiz/1">
-            <Button onClick={onRetake} title={"Retake quiz"} />
+            <Button onClick={onRetake} title={t("Retake quiz")} />
           </Link>
         </Container>
       </PageContainerWithButton>
