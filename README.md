@@ -6,10 +6,22 @@ The Quiz of reader preferences
 
 ## Tech Stack
 
-**Client:** React, React-Router, TypeScript, LocalStorage, HTML5, CSS3(Sass), React styled components
+React
+React-Router
+TypeScript
+LocalStorage
+React styled components
+React CSV Downloader
+Framer Motion
+
+## Localization
+
+i18n
+
+Translation is performed using AI
+
 
 ## Run Locally
 
 - `npm i` - install dependencies
 - `npm start` - run development server
-- `npm run deploy` - build and deploy to GH Pages
