@@ -47,5 +47,9 @@
   "multiple-select": "Selección múltiple",
   "bubble": "Burbuja",
   "email": "Correo electrónico",
+  "order": "orden",
+  "title": "título",
+  "type": "tipo",
+  "answer": "respuesta",
   "50+": "50+"
 }
