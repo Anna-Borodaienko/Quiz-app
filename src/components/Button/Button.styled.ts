@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { colors } from "../../constants/styles";
-import { animationDelay } from "../../constants/styles";
+import styled from 'styled-components';
+import { colors } from '../../constants/styles';
+import { animationDelay } from '../../constants/styles';
 
 interface StyledButtonProps {
   disabled: boolean;
@@ -9,13 +9,14 @@ interface StyledButtonProps {
 export const StyledButton = styled.button<StyledButtonProps>`
   height: 50px;
   width: 100%;
-  background-color: ${props => props.disabled ? colors.opacityMagenta40 : colors.magenta};
+  background-color: ${(props) =>
+    props.disabled ? colors.opacityMagenta40 : colors.magenta};
   border: ${colors.darkPurple};
   border-radius: 1000px;
   margin-bottom: 24px;
   padding: 16px;
   color: ${colors.white};
-  font-family: "Albert Sans", sans-serif;
+  font-family: 'Albert Sans', sans-serif;
   font-size: 17px;
   font-weight: 800;
   line-height: 24px;
@@ -27,4 +28,4 @@ export const StyledButton = styled.button<StyledButtonProps>`
   &:hover {
     background-color: ${colors.opacityMagenta40};
   }
-`
+`;

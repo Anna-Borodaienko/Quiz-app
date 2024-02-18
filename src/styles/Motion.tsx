@@ -1,5 +1,5 @@
-import { motion, MotionProps } from "framer-motion";
-import React, { PropsWithChildren } from "react";
+import { motion, MotionProps } from 'framer-motion';
+import React, { PropsWithChildren } from 'react';
 
 const Motion: React.FC<PropsWithChildren<MotionProps>> = ({ children }) => (
   <>
@@ -7,8 +7,7 @@ const Motion: React.FC<PropsWithChildren<MotionProps>> = ({ children }) => (
       layout
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.5 } }} 
-    >
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}>
       {children}
     </motion.div>
   </>

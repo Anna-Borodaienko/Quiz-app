@@ -1,13 +1,13 @@
-import styled from "styled-components";
-import { colors } from "../../../constants/styles";
-import { animationDelay } from "../../../constants/styles";
+import styled from 'styled-components';
+import { colors } from '../../../constants/styles';
+import { animationDelay } from '../../../constants/styles';
 
 interface StyledButtonProps {
   height?: string;
 }
 
 export const StyledButton = styled.button<StyledButtonProps>`
-  height: ${props => props.height === "small" ? "50px" : "70px"};
+  height: ${(props) => (props.height === 'small' ? '50px' : '70px')};
   width: 100%;
   background-color: ${colors.midnightBlue};
   border-radius: 16px;
@@ -22,10 +22,10 @@ export const StyledButton = styled.button<StyledButtonProps>`
   &:hover {
     background-color: ${colors.opacityMagenta40};
   }
-`
+`;
 
 export const StyledOption = styled.span`
   font-weight: 600;
   font-size: 17px;
   color: ${colors.white};
-`
+`;

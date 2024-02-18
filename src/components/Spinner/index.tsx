@@ -1,10 +1,7 @@
-import { StyledBar } from "./Spinner.styled";
+import { StyledBar } from './Spinner.styled';
 
 const Spinner: React.FC = () => {
-
-  return (
-    <StyledBar />
-  )
-}
+  return <StyledBar />;
+};
 
 export default Spinner;

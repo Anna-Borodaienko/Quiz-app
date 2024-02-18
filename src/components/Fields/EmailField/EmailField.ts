@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { colors } from "../../../constants/styles";
-import { animationDelay } from "../../../constants/styles";
+import styled from 'styled-components';
+import { colors } from '../../../constants/styles';
+import { animationDelay } from '../../../constants/styles';
 
 export const Wrapper = styled.div`
   margin: 5px 0;
-`
+`;
 
 export const StyledInput = styled.input`
   height: 70px;
@@ -19,8 +19,7 @@ export const StyledInput = styled.input`
   color: ${colors.white};
   transition: background-color ${animationDelay};
 
-  &:not(:placeholder-shown)
-   {
+  &:not(:placeholder-shown) {
     background-color: ${colors.lightPurple};
     border-color: ${colors.lightMagenta};
   }
@@ -30,4 +29,4 @@ export const StyledInput = styled.input`
     background-color: ${colors.lightPurple};
     border-color: ${colors.lightMagenta};
   }
-`
+`;

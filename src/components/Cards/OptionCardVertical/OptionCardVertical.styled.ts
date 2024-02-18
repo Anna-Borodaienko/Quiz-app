@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { colors } from "../../../constants/styles";
-import { animationDelay } from "../../../constants/styles";
+import styled from 'styled-components';
+import { colors } from '../../../constants/styles';
+import { animationDelay } from '../../../constants/styles';
 
 export const StyledButton = styled.button`
   height: 140px;
@@ -19,7 +19,7 @@ export const StyledButton = styled.button`
   &:hover {
     background-color: ${colors.opacityMagenta40};
   }
-`
+`;
 
 export const IconWrapper = styled.div`
   height: 60px;
@@ -27,15 +27,15 @@ export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const Icon = styled.img`
   height: 50px;
   width: 50px;
-`
+`;
 
 export const StyledOption = styled.span`
   font-weight: 600;
   font-size: 15px;
   color: ${colors.white};
-`
+`;

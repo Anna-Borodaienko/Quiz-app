@@ -13,13 +13,12 @@ import HatesPage from './Pages/HatesPage';
 import { Pages } from './constants/pages';
 
 const App: React.FC = () => {
-
   const location = useLocation();
 
   return (
     <AppWrapper>
       <StyledApp>
-        <AnimatePresence mode='wait'>
+        <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route index path={Pages.HOME} element={<MainPage />} />
             <Route path={`${Pages.QUIZ}/1`} element={<MainPage />} />
@@ -35,6 +34,6 @@ const App: React.FC = () => {
       </StyledApp>
     </AppWrapper>
   );
-}
+};
 
 export default App;

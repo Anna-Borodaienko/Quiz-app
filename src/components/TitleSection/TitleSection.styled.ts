@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { colors } from "../../constants/styles"
+import styled from 'styled-components';
+import { colors } from '../../constants/styles';
 
 export const Title = styled.div`
   font-size: 22px;
@@ -7,7 +7,7 @@ export const Title = styled.div`
   text-align: center;
   color: ${colors.lightGrey};
   margin-bottom: 16px;
-`
+`;
 
 export const Subtitle = styled.div`
   font-size: 16px;
@@ -15,4 +15,4 @@ export const Subtitle = styled.div`
   text-align: center;
   color: ${colors.grey};
   margin-bottom: 24px;
-`
+`;

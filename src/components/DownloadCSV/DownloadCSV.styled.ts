@@ -1,6 +1,6 @@
-import { styled } from "styled-components";
-import { colors } from "../../constants/styles";
-import { animationDelay } from "../../constants/styles";
+import { styled } from 'styled-components';
+import { colors } from '../../constants/styles';
+import { animationDelay } from '../../constants/styles';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   border-radius: 1000px;
   padding: 16px;
   color: ${colors.white};
-  font-family: "Albert Sans", sans-serif;
+  font-family: 'Albert Sans', sans-serif;
   font-size: 17px;
   font-weight: 800;
   line-height: 24px;
@@ -27,9 +27,9 @@ export const Wrapper = styled.div`
   &:hover {
     background-color: ${colors.opacityMagenta40};
   }
-`
-export const  StyledText = styled.div`
-  font-family: "Albert Sans", sans-serif;
+`;
+export const StyledText = styled.div`
+  font-family: 'Albert Sans', sans-serif;
   font-size: 16px;
   color: ${colors.blueGray};
-`
+`;
