@@ -9,28 +9,35 @@ import { OptionsContainer } from "../../styles/OptionsContainer";
 import { PageContainerWithButton } from "../../styles/PageContainerWithButton";
 import Button from "../../components/Button";
 import { Pages } from "../../constants/pages";
+import { getVisibleTopics } from "../../api/dataWithParams";
 
 const TopicsPage: React.FC = () => {
-  const [topics, setTopics] = useState<string[]>(getSelectedTopics());
+  const [selectedTopics, setSelectedTopics] = useState<string[]>(getSelectedTopics());
+  const [visibleTopics] = useState<string[]>(getVisibleTopics());
+
 
   const navigate = useNavigate();
 
   const onHandleTheme = (option: string, selected: boolean) => {
+    const checkedSelectedTopics = checkSelectedTopics();
     if (!selected) {
-      setTopics(topics.filter(topic => topic !== option)) ;
-    } else if (topics.length < 3) {
-      setTopics([...topics, option]);
+      setSelectedTopics(selectedTopics.filter(topic => topic !== option)) ;
+    } else if (checkedSelectedTopics.length < 3) {
+      setSelectedTopics([...selectedTopics, option]);
     }
   };
 
   const isSelected = (option: string) => {
-    return topics.includes(option);
+    return selectedTopics.includes(option);
   };
 
   const onSubmitHate = (): void => {
-    submitTopics(topics);
+    const checkedSelectedTopics = checkSelectedTopics();
+    submitTopics(checkedSelectedTopics);
     navigate(`${Pages.LOADER}`);
-  }
+  };
+
+  const checkSelectedTopics = () => selectedTopics.filter(hate => visibleTopics.includes(hate));
 
   return (
     <Motion>
@@ -38,15 +45,11 @@ const TopicsPage: React.FC = () => {
         <Header />
         <TitleSection title="What are your favorite topics?" subtitle="Choose up to 3 topics you like" />
         <OptionsContainer direction={"row"} wrap={"wrap"}>
-          <OptionCardRound option="Werewolf" handleSelect={onHandleTheme} selected={isSelected("Werewolf")}></OptionCardRound>
-          <OptionCardRound option="Action" handleSelect={onHandleTheme} selected={isSelected("Action")}></OptionCardRound>
-          <OptionCardRound option="Romance" handleSelect={onHandleTheme} selected={isSelected("Romance")}></OptionCardRound>
-          <OptionCardRound option="Young Adult" handleSelect={onHandleTheme} selected={isSelected("Young Adult")}></OptionCardRound>
-          <OptionCardRound option="Bad Boy" handleSelect={onHandleTheme} selected={isSelected("Bad Boy")}></OptionCardRound>
-          <OptionCardRound option="Royal Obsession" handleSelect={onHandleTheme} selected={isSelected("Royal Obsession")}></OptionCardRound>
-          <OptionCardRound option="Billionaire" handleSelect={onHandleTheme} selected={isSelected("Billionaire")}></OptionCardRound>
+          {visibleTopics.map(topic => (
+            <OptionCardRound key={topic} option={topic} handleSelect={onHandleTheme} selected={isSelected(topic)}></OptionCardRound>
+          ))}
         </OptionsContainer>
-        <Button onClick={onSubmitHate} disabled={topics.length === 0} title="Next" />
+        <Button onClick={onSubmitHate} disabled={selectedTopics.length === 0} title="Next" />
       </PageContainerWithButton>
     </Motion>
   );

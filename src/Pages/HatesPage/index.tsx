@@ -10,9 +10,11 @@ import { OptionsContainer } from "../../styles/OptionsContainer";
 import { PageContainerWithButton } from "../../styles/PageContainerWithButton";
 import { getCurrentPage } from "../../utils/getCurrentPage";
 import { Pages } from "../../constants/pages";
+import { getVisibleHates } from "../../api/dataWithParams";
 
 const HatesPage: React.FC = () => {
-  const [hates, setHates] = useState<string[]>(getSelectedHates());
+  const [selectedHates, setSelectedHates] = useState<string[]>(getSelectedHates());
+  const [visibleHates] = useState<string[]>(getVisibleHates());
 
   const navigate = useNavigate();
 
@@ -20,18 +22,19 @@ const HatesPage: React.FC = () => {
 
   const onHandleTheme = (option: string, selected: boolean) => {
     if (selected) {
-      setHates([...hates, option]);
-    } else setHates(hates.filter(hate => hate !== option));
+      setSelectedHates([...selectedHates, option]);
+    } else setSelectedHates(selectedHates.filter(hate => hate !== option));
   };
 
   const isSelected = (option: string) => {
-    return hates.includes(option);
+    return selectedHates.includes(option);
   };
 
   const onSubmitHate = (): void => {
-    submitHates(hates);
+    const checkedSelectedHates = selectedHates.filter(hate => visibleHates.includes(hate));
+    submitHates(checkedSelectedHates);
     navigate(`${Pages.QUIZ}/${currentPage + 1}`);
-  }
+  };
 
   return (
     <Motion>
@@ -40,14 +43,13 @@ const HatesPage: React.FC = () => {
           <Header />
           <TitleSection title="What do you hate the most in a book?" />
           <OptionsContainer>
-            <OptionCardCheckbox option="Lack of logic" handleSelect={onHandleTheme} selected={isSelected("Lack of logic")}></OptionCardCheckbox>
-            <OptionCardCheckbox option="A slow speed" handleSelect={onHandleTheme} selected={isSelected("A slow speed")}></OptionCardCheckbox>
-            <OptionCardCheckbox option="Lack of humor" handleSelect={onHandleTheme} selected={isSelected("Lack of humor")}></OptionCardCheckbox>
-            <OptionCardCheckbox option="Way too generic ending" handleSelect={onHandleTheme} selected={isSelected("Way too generic ending")}></OptionCardCheckbox>
+            {visibleHates.map(hate => (
+              <OptionCardCheckbox key={hate} option={hate} handleSelect={onHandleTheme} selected={isSelected(hate)}></OptionCardCheckbox>
+            ))}
           </OptionsContainer>
         </div>
         <div>
-          <Button onClick={onSubmitHate} disabled={hates.length === 0} title="Next" />
+          <Button onClick={onSubmitHate} disabled={selectedHates.length === 0} title="Next" />
         </div>
       </PageContainerWithButton>
     </Motion>
