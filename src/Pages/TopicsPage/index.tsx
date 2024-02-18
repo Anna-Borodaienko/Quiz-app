@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getTopics, submitTopics } from "../../api/topics";
+import { getSelectedTopics, submitTopics } from "../../api/topics";
 import OptionCardRound from "../../components/Cards/OptionCardRound";
 import Header from "../../components/Header";
 import TitleSection from "../../components/TitleSection";
@@ -11,7 +11,7 @@ import Button from "../../components/Button";
 import { Pages } from "../../constants/pages";
 
 const TopicsPage: React.FC = () => {
-  const [topics, setTopics] = useState<string[]>(getTopics());
+  const [topics, setTopics] = useState<string[]>(getSelectedTopics());
 
   const navigate = useNavigate();
 

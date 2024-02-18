@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { getHates, submitHates } from "../../api/hates";
+import { getSelectedHates, submitHates } from "../../api/hates";
 import Button from "../../components/Button";
 import OptionCardCheckbox from "../../components/Cards/OptionCardCheckbox";
 import Header from "../../components/Header";
@@ -12,7 +12,7 @@ import { getCurrentPage } from "../../utils/getCurrentPage";
 import { Pages } from "../../constants/pages";
 
 const HatesPage: React.FC = () => {
-  const [hates, setHates] = useState<string[]>(getHates());
+  const [hates, setHates] = useState<string[]>(getSelectedHates());
 
   const navigate = useNavigate();
 
