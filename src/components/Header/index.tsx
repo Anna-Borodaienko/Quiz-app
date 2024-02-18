@@ -1,34 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import back from '../../images/back.svg';
 import { HeaderWrapper, RowContainer, Icon, IconWrapper } from './Header.styled';
 import ProgressBarLine from '../ProgressBarLine';
-import Counter from '../Counter';
-import { receiveCurrentPageNr } from '../../utils/receiveCurrentPageNr';
-import { totalQuestionsNr } from '../../constants/questions';
+import Counter from '../PageProgress';
+import { getCurrentPage } from '../../utils/getCurrentPage';
+import { totalQuestions } from '../../constants/questions';
+import { Pages } from '../../constants/pages';
 
 const Header: React.FC = () => {
-  
-  const currentPageNr = receiveCurrentPageNr();
 
-  const totalNr = totalQuestionsNr;
+  const navigate = useNavigate();
+  
+  const currentPage = getCurrentPage();
+
+  const totalPages = totalQuestions;
+
+  const handleClick = () => {
+    navigate(`${Pages.QUIZ}/${currentPage - 1}`);
+  }
 
    return (
     <>
-      {currentPageNr > 0 && currentPageNr <= 5 ? (
+      {currentPage > 0 ? (
         <HeaderWrapper>
           <RowContainer>
-            {currentPageNr > 1 ? (
-              <Link to={`/quiz/${currentPageNr - 1}`}>
-                <IconWrapper>
-                  <Icon src={back} alt="Back" />
-                </IconWrapper>
-              </Link>
+            {currentPage > 1 ? (
+              <IconWrapper onClick={handleClick}>
+                <Icon src={back} alt="Back" />
+              </IconWrapper>
             ) : <IconWrapper />}
-            <Counter totalNr={totalNr} currentNr={currentPageNr} />
+            <Counter totalPages={totalPages} currentPage={currentPage} />
           </RowContainer>
           <RowContainer>
-            <ProgressBarLine currentNr={currentPageNr} />
+            <ProgressBarLine currentPage={currentPage} />
           </RowContainer>
         </HeaderWrapper>
         ) : <HeaderWrapper />

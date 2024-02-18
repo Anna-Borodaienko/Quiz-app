@@ -7,7 +7,7 @@ interface ButtonProps {
   title: string;
 } 
 
-const Button:React.FC<ButtonProps> = ({ onClick, disabled, title }: ButtonProps) => {
+const Button:React.FC<ButtonProps> = ({ onClick, disabled = false, title }: ButtonProps) => {
 
   const { t } = useTranslation();
 
