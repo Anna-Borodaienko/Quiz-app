@@ -6,13 +6,7 @@ The Quiz of reader preferences
 
 ## Tech Stack
 
-React
-React-Router
-TypeScript
-LocalStorage
-React styled components
-React CSV Downloader
-Framer Motion
+React, React-Router, TypeScript, LocalStorage, React styled components, React CSV Downloader, Framer Motion
 
 ## Localization
 
