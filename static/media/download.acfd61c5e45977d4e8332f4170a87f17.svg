@@ -1,0 +1,14 @@
+<svg width="42.000000" height="42.000000" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<pattern id="pattern_31_18050" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+			<use xlink:href="#image31_1805_0" transform="matrix(0.01,0,0,0.01,0,0)"/>
+		</pattern>
+		<image id="image31_1805_0" width="100.000000" height="100.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABHNCSVQICAgIfAhkiAAAAmxJREFUeJzt2z9qFGEAhvFn/YMImm0CgmxhkQMoeAOt0tloLuANLDyBlaYRLPQCEQ8haClqK1iICjaCoFZiYixmgtnsbHbMzOy82X1+MJB8LF++mWd3MtmdgCRJkiRJkiRJ0mIb9L2AFlwEbpdfPwG+9LiWpbcCfAZ2y+0TcL7XFS25df7F2NvWe11RQyf6XkBDKzXHjo3jHmThGCSMQcIYJIxBwhgkjEHCGCSMQcIYJIxBwhgkjEHCGCSMQcIYJIxBwhgkjEHCGCSMQcIYJIxBwqQGuQBcBk52MPdp4Aqw2sHcjSUGuQV8BN4Cr4BRi3OPyjnfUNx2utHi3AtpAHxl/NbQ90yPssHkraTTDvKonGv/Y78R9qSMWgzFKercgbE14DnNXimjco61A+NnCPsPgLQg28D9ivEmUabFoPxZO0eYc6kMgIdMnop2gQ/ApX2PnXXKqjpN7W2PyXtCxqob5bAgxmhZnSjTghijI7Oi3K0Yv4MxOjUAHlF9gH/XHNst54i6ojrODnul1Nl8ZXTgqFGM0aH/jWKMOagbxRhzNCuKMXowLYoxejQA7lG8B7Zdfu2lbYBhuUlSDTeALeABoZ9Vd2SVYp+3KI5BhOuMX+W86Hc5c/WS8X2/1u9yCpuML+oPy/ELdsjkJfdm00nbuF4/e+D7QcXYIqrax8b77R9QYQwSxiBhDBLGIGEMEsYgYQwSxiBhDBLGIGFOdTTvEPjV0dwpOnkDtasg7zqad+F5ygrTRpCfLcyxKH40naCNIM8obsFZdtsUx6KRtu5hugrcZDk+KazyHXgKvO57IZIkSZIkSZIkSen+Ajm43eYo12OeAAAAAElFTkSuQmCC"/>
+		<pattern id="pattern_31_18051" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+			<use xlink:href="#image31_1805_1" transform="matrix(0.01,0,0,0.01,0,0)"/>
+		</pattern>
+		<image id="image31_1805_1" width="100.000000" height="100.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABHNCSVQICAgIfAhkiAAAAohJREFUeJzt27FqFFEYhuHvGEUEzTYBQbaw8AIUvAOt0qXR3IB3YOEVpIppBAu9gYgXEdAyqK1gIUawEQS1EldfC0dcxtl1kjmz59/Z74EUO0l+zsybnZ1NJpKZmZmZmZmZmZmZmdmwpdIL6Aq4JOlO9fBxSulDyfWsNGAdeM9fR8CF0utaWcAm/9osva4uTpVeQEfrLbctjWUPMjgOEoyDBOMgwThIMA4SjIME4yDBOEgwDhKMgwTjIME4SDAOEoyDBOMgwThIMA4SjIME4yDBOEgwDhKMgwQTMghwEbgKrPUw+wxwDdjIPTuHcEGA25LeSXol6RAYZ5w9lnQo6aWkI2A71+xBAhLwsXZr6JtZUYDthltJGw8yMK5mTfsEhPqhDLUYSWuSzte2XZF00OWZUn3vQTVr2lkF+w+AUEFSShNJuw2fOnGUOTEkaTel9OO4M1dKddp60HAqAngLXJ762rmnrBmnqT8eRTtdhdU2yrwgjpFZmyizgjhGT1pEudew/a5j9KiK8nDGAf7echvVjFBXVEvrP8+UNvzMyK1DFMfoywmiOEbfjhHFMRalRRTHWLQ5URyjlCrKDjCpPnbwpW15wAgYlV6HmS0FYAvYB+4T9G/VfQA2qn3eB7ZKr0eSBNysXeU8K72mRQGe1/b9Ruk1CdirLernKrzAVhcSdXtd5+a4Xj9Xe5watg1R0z523m+/gQrGQYJxkGAcJBgHCcZBgnGQYBwkGAcJxkGCcZBgTvc0dwR862l2FL38ArWvIK97mjt4PmUFkyPI1wwzhuJL1wE5gjyVNMkwZ9lN9PtYdJLlHibguqRb6umFbgl8lvQkpfSi9ELMzMzMzMzMzMzMzMyi+wUogR/pNdp3CgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<rect id="download" width="42.000000" height="42.000000" fill="url(#pattern_31_18050)" fill-opacity="0"/>
+	<rect id="download" width="42.000000" height="42.000000" fill="url(#pattern_31_18051)" fill-opacity="1.000000"/>
+</svg>
